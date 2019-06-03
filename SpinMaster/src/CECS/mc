@@ -1,0 +1,9 @@
+
+rm -r ./CECS
+mkdir ./CECS
+
+
+rm *class
+
+
+

@@ -1,0 +1,14 @@
+
+jar cvf mikesFly.jar *class 1>/home/michael/dev/null/bitsandbits
+
+#rm -r ./CECS
+#mkdir ./CECS
+mv mikesFly.jar ./CECS/
+
+cd CECS
+jar -xvf mikesFly.jar 1>/home/michael/dev/null/bitsandbitsr
+#mv *class ./CECS
+
+jar -xvf /home/michael/Project/cvs/java8/Trials/src/CECS/CECS/mikesFly.jar 1>/home/michael/dev/null/bitsandbits
+
+

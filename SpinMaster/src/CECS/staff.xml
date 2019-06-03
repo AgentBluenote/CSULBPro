@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<theatre>
+    <staff id="1001">
+        <firstname>Mariana</firstname>
+        <lastname>Ramirez</lastname>
+        <nickname>Sweet Pea</nickname>
+        <salary>100000</salary>
+        <slogan>sub standard</slogan>
+    </staff>
+    <staff id="2002">
+        <firstname>Veronica</firstname>
+        <lastname>Navarro</lastname>
+        <nickname>Small Business</nickname>
+        <salary>200000</salary>
+        <slogan>we got your back...</slogan>
+    </staff>
+    <staff id="2003">
+        <firstname>Tammy</firstname>
+        <lastname>Arnoni</lastname>
+        <nickname>SCI Controller</nickname>
+        <salary>150000</salary>
+        <slogan>we got your shirt</slogan>
+    </staff>
+</theatre>

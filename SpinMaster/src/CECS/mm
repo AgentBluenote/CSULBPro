@@ -1,0 +1,23 @@
+
+export CLASSPATH=".:/home/michael/Project/cvs/java8/Trial/src/CECS/CECS"
+
+javac -Xlint:unchecked -cp $CLASSPATH/mikesFly.jar: FileProcessing.java Hardware.java Company.java BotNet.java KeptWomen.java Library.java JVMRunTime.java MISC.java PharmacyEntity.java OperatingSystem.java Platform.java Student.java X509Server.java XMLParser.java Criminal.java CriminalFactory.java NFSServices.java Unknown.java 
+
+########################################
+
+
+
+#export CSSCS_JAR=$R/TaskManagementMessage.class:$R/openmap.jar:$R/CoordinateCon.jar:$R/WinEnv.jar:$R/ObjectsDB.jar:$R/Address.jar:$R/CDPUtil.jar
+
+#javac -classpath $CSSCS_JAR -d $PWD/classes $PWD/*java
+
+
+#mv $PWD/classes/* $PWD/classes/unix/
+
+#cd $PWD/classes/unix/
+
+#jar cvf $1 *class
+
+
+
+
