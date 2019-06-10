@@ -85,4 +85,17 @@ public class Library implements NFSServices{
         return "Just In Time"; 
     }
 
+	@Override
+	public void setName( String name) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void setSSNumber(String ss_number) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

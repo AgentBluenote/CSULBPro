@@ -2,6 +2,8 @@ package CECS;
 
 import java.util.*;
 
+import CECS.Platform.HexStack;
+
 /*
  *  Filename: 
  *  Purpose: 
@@ -13,8 +15,8 @@ import java.util.*;
  */
 public final class JVMRunTime{
      
-    private static ArrayList<NFSServices> pipeline = new ArrayList<NFSServices>();   
-    private static String jvm                      = new String(); 
+    private static ArrayList<NFSServices> m_pipeline = new ArrayList<NFSServices>();   
+    private static String m_jvm                      = new String(); 
     private static int IP                          = 0;  // Instruction Pointer 
 
     //
@@ -27,46 +29,69 @@ public final class JVMRunTime{
     // constructor signiture II
     //
     public JVMRunTime( NFSServices arg ){
-        jvm = "Hot Spot 2.0";
+        m_jvm = "Hot Spot 2.0";
 
 //    	NFSServices handle  =  CriminalFactory.getCriminal ( "Marlon" ); 
-        pipeline = new ArrayList<NFSServices>();  
- //       pipeline.add( handle );
+        m_pipeline = new ArrayList<NFSServices>();  
+ //       m_pipeline.add( handle );
     }
 
     //
     // method name:
     //
-    public static void setJVM(String arg){  
-        jvm = arg; 
+    public void setJVM(String arg){  
+        m_jvm = arg; 
     }
 
     //
     // method naem:
     //
-    public static String getJVM(){  
-        return jvm; 
+    public String getJVM(){  
+        return m_jvm; 
     }
 
 
     //
-    // method name:requestDynamicLibrary 
+    // method name:
     //
-    public static NFSServices requestDynamicLibrary(){  
+    public NFSServices requestDynamicLibrary(){  
 
         NFSServices noun = new Library();
-        noun = pipeline.get( IP );
+        noun = m_pipeline.get( IP );
 
-	return noun;
+	    return noun;
     }
 
     //
     // main
     //
-    public static void main(String[] args){
+    public static void main(String[] argv){
 
-        JVMRunTime rt = null;
-        rt = new JVMRunTime(); 
+        JVMRunTime jvm_runtime = null;
+        jvm_runtime = new JVMRunTime(); 
+        
+
+      Student  application   = CriminalFactory.getCriminal("Michael" ); 
+
+      // no input 
+      if ( argv.length == 0){
+          System.out.println("command line param:argv[0] " + "No input argument" );
+
+      }
+      // input filename 
+      else{
+          System.out.println("command line param:argv[0] " + argv[0] );
+      }
+
+
+      application.getName();           
+       application.getSSNumber();           
+      application.getHomeDirectory();           
+      application.getLicenseAgreement();           
+
+//     jvm_runtime.
+
+        
     }
 }
 

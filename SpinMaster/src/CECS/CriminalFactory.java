@@ -13,10 +13,20 @@ import java.util.*;
  *        Windows embedded ( Speed Kernal ) 
  *       .Net ( Run-Time ) 
  *        HTML5 
+ *        
+ *        
+ *       JSR 1 JMS Java Message Service 	 
+ *       JSR 154 JMS Java Message Service 	 
+ *       JSR 907 JTA Java Transaction API  
+ *       JSR 356 Java API for WebSocket 
+ *       JSR 914 JMS Java Message Service 	 
+ *        
+ *       *every week and every paycheck for the amplification model. 
+ *        
  */
 public final class CriminalFactory {
 
-    private static Student m_criminal  =  new Student();  
+    private static UnknownStudent m_criminal  =  new UnknownStudent();  
 
     // 
     // default Constructor
@@ -27,75 +37,76 @@ public final class CriminalFactory {
     // 
     // method name:
     // 
-    public static Student getCriminal( String subtype ){
+    // Pattern Type: Factory, which is a creational Pattern 
+    //               which is always backed by "Detroit Muscle"
+    //
+    // T is for Tenure, means they can not lose their job 
+    // 
+    // Tenure is so rewarding as you do not have to constantly streSS
+    // about losing your job, losing your lively-hood 
+    //
+    // As you NO, if it's a pattern, I can program it.  - annonymous
+    // 
+    public static UnknownStudent getCriminal( String subtype ){
 
-    	switch ( subtype ){
+    	switch ( subtype ){   // we know the name of the student
 
-    	    case "Michael":
-               System.out.println(" Michael " );
-               m_criminal  =  new Student(    "~marcham",
+    	    case "Allison":
+               System.out.println("Criminal Name:  Robert Allison." );
+               m_criminal  =  new UnknownStudent(    "~tallison",
                                           " port 100  " ,
                                           " Apache 2.0  \"the License\"" );
     	        break;
 
-    	    case "Mario":
-               System.out.println(" Mario" );
-               m_criminal  =  new Student(    "~mgines",
-                                          " port 9  " ,
-                                          " Apache 2.0  \"the License\"" );
-    	        break;
+    	    case "Dr. Volper":
 
-    	    case "Dennis":
-
-               System.out.println("Dennis " );
-               m_criminal  =  new Student(    "~dvolper ",
+               System.out.println("Dennis Volper" );
+               m_criminal  =  new UnknownStudent(    "~dvolper ",
                                           " port( 22 ) " ,
                                           " Safari License! " );
     	        break;
 
-    	    case "Tu":
-
-               System.out.println("Tu Ngo " );
-               m_criminal  =  new Student(    "~tungu ",
-                                          " port( 50 ) " ,
+    	    case "Dr. Eshagian":
+               System.out.println("Miss E." );
+               m_criminal  =  new UnknownStudent(    "~eshag ",
+                                          " port( 69 ) " ,
                                           " class C license" );
     	        break;
 
-    	    case "Danny":
-               System.out.println(" Danny " );
-               m_criminal  =  new Student(    "~dmolina",
-                                          " port( 50 ) " ,
-                                          " GPL " );
 
+    	    case "Tracy":
+               System.out.println("Criminal Name:  Tracy T. Maples" );
+                m_criminal  =  new UnknownStudent(  "~tmaples",
+                                          " port( 555 ) " ,
+                                          " BSD " );
     	        break;
 
     	    case "Princess":
-                m_criminal  =  new Student( "~pbravo",
+               System.out.println("Criminal Name:  Michael T." );
+                m_criminal  =  new UnknownStudent( "~pbravo",
                                           " port( 23 ) " ,
                                           " GPL " );
     	        break;
 
     	    case "Marlon":
-                m_criminal  =  new Student(  "~mbravo",
+               System.out.println("Criminal Name:  Michael T." );
+                m_criminal  =  new UnknownStudent(  "~mbravo",
                                           " port( 23 ) " ,
                                           " GPL " );
     	        break;
 
-    	    case "John":
-                m_criminal  =  new Student(  "~jtramel",
-                                          " port( 23 ) " ,
-                                          " GPL " );
-    	        break;
-
-    	    case "Tracy":
-                m_criminal  =  new Student(  "~tmaples",
-                                          " port( 1028 ) " ,
-                                          " BSD " );
+    	    case "Random":
+               System.out.println("Criminal Name:  Random" );
+                m_criminal  =  new UnknownStudent(  "~r",
+                                          " port( r ) " ,
+                                          " BSD Bull Shit Deamon! " );
     	        break;
 
 
     	    default:
-               System.out.println(" default case " );
+//               System.out.println("I am  :  theSpinMaster" );
+ //              System.out.println("I was :  theSpinMaster" );
+        //       System.out.println("I will:  theSpinMaster" );
 
     	} // end switch
 
@@ -106,9 +117,36 @@ public final class CriminalFactory {
     // main()
     //
     public static void main(String[] args) {
-       Student stud  = new Student();
+    	
+        StringBuilder path = new  StringBuilder( 
+                                    "/home/michael/Project/" + 
+                                    "cvs/java8/Trials/src/CECS/" );	
 
-       stud = CriminalFactory.getCriminal("Mario");
+       String                 filename      = new String( "gangland.xml");	
+    	
+    	
+       BotNet  robot               = null; 
+       UnknownStudent registered_student  = null; 
+       Student unregistered_student      = null; 
+
+       ArrayList<String>  mylist = new ArrayList<String>();
+       
+       robot                 = new BotNet();
+       registered_student    = CriminalFactory.getCriminal("Michael");
+       unregistered_student  = CriminalFactory.getCriminal("Mario");
+
+       robot.writeMessage("Blow me a kiss...");
+
+       MISC.readXMLfile( path, filename );  // MIKE left off here.
+
+       mylist = MISC.issueSystemCall( "uname -a" );
+       
+       // MIKE foreach loop
+       for( String i : mylist ){
+    	   int j = 0;
+           System.out.println("I am :" + mylist.get(j)  );
+           j++;
+       }
 
     }
 }

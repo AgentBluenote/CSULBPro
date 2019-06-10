@@ -11,7 +11,7 @@ import java.util.*;
  *        
  *  i.e.  Sony DS Chipset  ( "DS stands for "Deep Shit" )
  *        Windows embedded ( Speed Kernal ) 
- *       .Net ( Run-Time ) 
+ *       .Net ( Run-Time ) }
  *        HTML5 
  */
 public final class Platform {

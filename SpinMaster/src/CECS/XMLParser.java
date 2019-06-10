@@ -8,42 +8,26 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 
-//import java.io.File;
 import java.io.*;
 import java.util.*;
 
+
+//
+// class XML    --  MIKE  figure out Stax Parser.
+//
 public class XMLParser {
-    private DocumentBuilderFactory m_dbFactory = null; 
-    private DocumentBuilder        m_dBuilder  = null; 
-    private Document               m_doc       = null; 
-    private File                   m_xmlFile   = null; 
-    private StringBuilder          m_path      = new StringBuilder( 
-                                       "/home/michael/Project/cvs/java8/Trials/src/CECS/");
+
+    public static void readXMLfile( StringBuilder in_path, String in_filename ) {
+        DocumentBuilderFactory m_dbFactory = null; 
+        DocumentBuilder        m_dBuilder  = null; 
+        Document               m_doc       = null; 
+        File                   m_xmlFile   = null; 
 
 
-    public XMLParser() {
-        // default to staff.xml	
-        m_xmlFile = new File( "/home/michael/Project/cvs/java8" + 
-                              "/Trials/src/CECS/staff.xml" );	
+        m_xmlFile = new File( in_path.append( in_filename ).toString() );
 
-    }
-
-    public XMLParser( String filename ) {
-
-        m_xmlFile = new File( "/home/michael/Project/cvs/" +
-                              "java8/Trials/src/CECS/"     + filename );	
-
-        m_path.append( filename ); 
-
-        System.out.println("Inputfile: " +  m_path );
-        System.out.println("Inputfile: " +  m_path );
-        System.out.println("Inputfile: " +  m_path );
-        System.out.println("Inputfile: " +  m_path );
-    }
-
-    public void readXMLfile() {
-//	    NodeList nList = m_doc.getElementsByTagName("staff");
- //          Node nNode = nList.item(temp);
+    	
+    	System.out.println( "CSULB_HOME: " + System.getenv("CSULB_HOME" ) );
 
         try {
 	     m_dbFactory = DocumentBuilderFactory.newInstance();
@@ -81,8 +65,8 @@ public class XMLParser {
 	                               + eElement.getElementsByTagName("nickname")
 	                                 .item(0).getTextContent());
 
-	            System.out.println("Salary : "
-	                               + eElement.getElementsByTagName("salary")
+	            System.out.println("Affiliation : "
+	                               + eElement.getElementsByTagName("gangaffiliation")
 	                                 .item(0).getTextContent());
 
 	            System.out.println("Salary : "
@@ -99,40 +83,34 @@ public class XMLParser {
 
     } // end readXMLFile()
 
+    /////////////////////////////////////////////////////////////////////////////////
     //
     // main()
     //
+    /////////////////////////////////////////////////////////////////////////////////
     public static void main(String argv[]) {
-        XMLParser dom = null; 
-        OutputStream system_call = null; 
 
-        // no input 
+        StringBuilder path = new  StringBuilder( 
+    		                                     "/home/michael/Project/" + 
+                                                 "cvs/java8/Trials/src/CECS/" );	
+
+        String                 filename      = new String( "gangland.xml");
+
+        //
+        // must have fully qualified path and filename.
+        //
         if ( argv.length == 0){  
             System.out.println("command line param:argv[0] " + "No input argument" );
               
-            dom = new XMLParser(); 
         }
-        // input filename 
         else{ 
-            System.out.println("command line param:argv[0] " + argv[0] );
-            dom = new XMLParser( argv[0] );
+             System.out.println("command line param:argv[0] " + argv[0] );
         }
 
-        dom.readXMLfile();
+        XMLParser.readXMLfile( path, filename );
 
-        try{
-            Process p = Runtime.getRuntime().exec( "pwd" );
-            system_call = p.getOutputStream();
-
-            System.out.println("" );
-
-            
-        }
-        catch( Exception e){
-        }
     } 
 }  // end of XMLParser
-
 
 
 

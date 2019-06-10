@@ -34,7 +34,6 @@ public class FileProcessing {
 
 		}
 
-
 		// 
 		//  name :    
 		// 
@@ -138,9 +137,9 @@ public class FileProcessing {
 //		    String         outfile = "C:\\Users\\IHATEALL\\Downloads\\Mychael" + 
 //		                                   "\\devAppSpace\\DBFlatFiles\\characterOutput.txt";
 
-		    String         infile = "/home/michael/Project/devAppSpace/DBFlatFiles/List_of_Companies.txt";
+		    String infile = "/home/michael/Project/CSULB/marcham/devAppSpace/DBFlatFiles/companies/List_of_Companies.txt"; 
 
-		    String         outfile = "/home/michael/Project/devAppSpace/DBFlatFiles/characterOutput.txt";
+		    String outfile = "/home/michael/Project/CSULB/marcham/devAppSpace/DBFlatFiles/companies/characterOutput.txt";
 
 		    try {
 
@@ -174,6 +173,4 @@ public class FileProcessing {
 		}
 }
     
-    // parse XML file
-    // ArrayList returnAlphabetical( 
 

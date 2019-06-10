@@ -8,7 +8,6 @@ import java.io.*;
  * Purpsose:
  */
 public final class OperatingSystem {
-//    private NFSServices class_174 = new Library( _preCanned[0] ); 
 
     private String m_OSDescription = new String("BSD Linux" ); 
 
@@ -29,48 +28,7 @@ public final class OperatingSystem {
        this.m_OSDescription = os;	
     }
 
-    // 
-    // method name: 
-    // 
-    public void getenvVariable( String Name ){  
-        Map<String, String> env = System.getenv();
-
-        System.out.println( "CSULB_HOME" + System.getenv("JAVA_HOME" ) );
-
-        for (String envName : env.keySet()) {
-//            System.out.format("%s=%s%n", envName, env.get(envName));
-        }
-    }
-
-    // 
-    // method name: 
-    // 
-    public void issueSystemCall( String command ){  
-
-        try {
-//            Process p = Runtime.getRuntime().exec("uname -a");
-            Process p = Runtime.getRuntime().exec("echo $CSULB_HOME");
-            p.waitFor();
-
-            BufferedReader reader = new BufferedReader(
-            		                    new InputStreamReader( p.getInputStream() ));
-            String line = reader.readLine();
-
-            while (line != null) {    
-                System.out.println(line);
-                line = reader.readLine();
-            }
-
-        }
-        catch(IOException e1) {
-        }
-        catch(InterruptedException e2) {
-        }
-
-        System.out.println("finished."); 
-        
-    }
-
+    
     // 
    // method name: 
     // 
@@ -126,15 +84,11 @@ public final class OperatingSystem {
         if ( argv.length > 0 )
             System.out.println("command line param:argv[0] " + argv[0] );
 
-
         theSystem = new OperatingSystem();
         theSystem.setRuntime( new JVMRunTime()); 
-
-
         theSystem.setOSDescription( "MAC OS");  // auto drive-by 
 
-//        theSystem.issueSystemCall("" );
-        theSystem.getenvVariable("");
+//        MISC.issueSystemCall("ls ./src/CECS -lrt");
 
     }  // end main()
 

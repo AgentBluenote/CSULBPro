@@ -11,7 +11,14 @@ public interface NFSServices{
 //    public void queryCityLegislation( String zipcode );
 
    public String getName();
+   public void setName( String name );
+
    public String getSSNumber();
- //  public String getHomeDirectory();
-//   public void getLicenseAgreement();
+   public void setSSNumber( String ss_number );
+
+   
+   
+   public String getHomeDirectory();
+
+   public void getLicenseAgreement();
 }
