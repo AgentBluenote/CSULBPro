@@ -28,15 +28,13 @@ import java.io.*;
 //  
 public class Student extends Observable implements NFSServices{
 
-    private String m_first_name       = new String("Spin Master"); 
-    private String m_ss_number  = new String("666-66-6666"); 
+    private String        m_first_name  = new String("Spin Master"); 
+    private String        m_ss_number   = new String("666-66-6666"); 
 
-    private StringBuilder m_Home_Dir = new StringBuilder("~Satan700"); 
-    private StringBuilder m_License  = new StringBuilder("CC 2.0 - I am the Devil"); 
-
-    private StringBuilder m_NickName        = new StringBuilder("Maven ArchType: Lucifer SS"); 
-
-    private StringBuilder m_GangAffiliation = new StringBuilder("Peckerwood"); 
+    private   StringBuilder m_GangAffiliation = new StringBuilder("Peckerwood"); 
+    protected StringBuilder m_NickName        = new StringBuilder("Maven ArchType: Lucifer SS"); 
+    protected StringBuilder m_home_dir        = new StringBuilder("~Satan696"); 
+    protected StringBuilder m_License         = new StringBuilder("CC 2.0 - I am the Devil"); 
 
 //    protected Object proxy = null; // MIKE later 
 
@@ -44,9 +42,9 @@ public class Student extends Observable implements NFSServices{
     // Constructror
     // 
     public Student() {
-        System.out.println( "DEBUG: Inside Unknown()" );
+        System.out.println( "Inside Student()\n" );
 //        System.out.println( "This is where I instantiate them..." );
-//        System.out.println( "Generally I use the tip of my Tongue" );
+//        System.out.println( "Generally I use the tip of my Tongue to instntiate them..." );
 //        System.out.println( "R.C AKA The G.O.A.T" );
     }
 
@@ -96,7 +94,7 @@ public class Student extends Observable implements NFSServices{
     // 
     public String getName(){
 
-        System.out.println( "DEBUG:  " + m_first_name );
+        System.out.println( "Student.getName()" + m_first_name );
         return m_first_name;
     }
 
@@ -113,7 +111,7 @@ public class Student extends Observable implements NFSServices{
     //
     public String getSSNumber(){
 
-        System.out.println( "DEBUG getSSNumber:  " + m_ss_number );
+        System.out.println( "Inisde Student::getSSNumber()   " + m_ss_number );
         return m_ss_number; 
     }
 
@@ -128,17 +126,16 @@ public class Student extends Observable implements NFSServices{
     // method name: 
     // 
     public String getHomeDirectory(){
-        System.out.println( "this.getHomeDirectory() " + this.m_Home_Dir );
+        System.out.println( "this.getHomeDirectory() " + this.m_home_dir );
 
-        return m_Home_Dir.toString();
+        return m_home_dir.toString();
     }
 
     //
     // method name: 
     //
     public void getLicenseAgreement(){
-        System.out.println( "this.getHomeDirectory() " + this.m_Home_Dir );
-        System.out.println( "Unknown: getL3icenseAgreement() " );
+        System.out.println( "Inside Student::getHomeDirectory() " + this.m_home_dir );
     }
 
     //*********************************************************************** 
@@ -148,23 +145,21 @@ public class Student extends Observable implements NFSServices{
     //*********************************************************************** 
     public static void main(String[] args) {
 
-        Student prof_student    = new Student();
-        Student python_student = new UnknownStudent();
+        Student prof_student   = new Student();
+        Student           fkey = new KeptWomenStudent();
 
-        prof_student.setName( "Spin Master");
+        prof_student.setName( "Michael J. SpinMaster");
         prof_student.getName();
-        prof_student.setSSNumber( "666-66-6666");
+
+        prof_student.setSSNumber( "666-65-6666");  
         prof_student.getSSNumber();
 
+        fkey.setName( "Mariana J. Ramirez");
+        fkey.getName();
 
-//        prof_student.getHomeDirectory();
- //       prof_student.getLicenseAgreement();
-
-
-  //      python_student.getHomeDirectory();
-   //     python_student.getLicenseAgreement();
+        fkey.setSSNumber( "(714)334-3855 NC - Not a Citizen... KW");
+        fkey.getSSNumber();
     }
-
 }
 
 

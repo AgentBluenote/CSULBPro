@@ -19,28 +19,28 @@ import java.lang.*;
 //
 public class UnknownStudent extends Student implements Observer /*implements NFSServices*/{ 
 
-    private String m_SSN = new String("1(203)666-7777");  // default: possibly "the spinMaster" 
+    private String m_ss_number    = new String("1(203)666-7777");  // default: possibly "the spinMaster" 
     private String m_student_name = new String("name"); 
-    private String m_HomeDir = new String("NFS"); 
+    private String m_home_dir     = new String("NFS"); 
 
 
     //
     // Constructor
     //
     public UnknownStudent() {
-        System.out.println("DEBUG: Inside Student()" );
+        System.out.println("DEBUG: UnknownStudent(::)" );
     }
 
     //
-    // Constructor
+    //
     //
     public UnknownStudent( String one, String two, String three) {
 
         System.out.println("DEBUG: Inside Student( String one, String two, String three )" );
 
-        m_SSN     = new String(one);  
-        m_student_name   = new String(two);  
-        m_HomeDir = new String(three); 
+        m_ss_number          = new String(one);  
+        m_student_name = new String(two);  
+        m_home_dir      = new String(three); 
     }
 
     //
@@ -50,59 +50,67 @@ public class UnknownStudent extends Student implements Observer /*implements NFS
         return "[source: Message Queue]: Blow me a kiss"; 	
     }
     
-    
-    
-    //************************************************************* 
+    //*********************************************************************** 
     //
-    // interface stuff
+    // interface methods... 
     //
-    //************************************************************* 
-
-    //
-    // method name: getName()
-    //
-    public String getName(){
-        String ret_val = null; 
-
-//        super.getName();
-
-        System.out.println( "Student.getLicenseAgreement() I don't know my name...");
-
-        ret_val = new String( m_student_name );
-
-        return "ret_val";
-    }
-
-    // 
-    // method name:  getHomeDirectory(){ 
-    // 
-    /*
-    public String getHomeDirectory(){
-        String ret_val = new String();
-
-        System.out.println("Student Name: " );
-        return ret_val;
-    }
-    */
+    //*********************************************************************** 
 
     // 
     // method name: 
     // 
-    /*
+    public String getName(){
+
+        System.out.println( "DEBUG:  " + m_student_name );
+
+        return m_student_name;
+    }
+
+    // 
+    // method name: 
+    // 
+    public void setName( String name ){
+    	m_student_name = new String( name );
+    }
+
+
+
+    //
+    // method name: 
+    //
     public String getSSNumber(){
-       return "BSD  Homeie:, 8 hours a day to claim \"exempt\" status ";
-    }
-    */
 
+        System.out.println( "DEBUG getSSNumber:  " + m_ss_number );
+        return m_ss_number; 
+    }
+
+    //
+    // method name: 
+    //
+	public void setSSNumber(String ss_number) {
+    	m_ss_number = new String( ss_number );
+	}
+    
     // 
-    // method name: licenseAgreement()  
-    //  
+    // method name: 
     // 
+    public String getHomeDirectory(){
+        System.out.println( "this.getHomeDirectory() " + this.m_home_dir );
+
+        return m_home_dir.toString();
+    }
+
+    //
+    // method name: 
+    //
     public void getLicenseAgreement(){
-        System.out.println( "Student.getLicenseAgreement(): BSD Homie: 8 hours a day to claim \"exempt\" status ");
-    }
 
-    // MIKE 
+        System.out.println( "I use BSD, The Bullshit Deamon... SS - Server Side " );
+        System.out.println( "A-PAC 2.0" );
+    } 
+    
+
+    // 
     // interface: Observer 
     // method name: 
     // 
@@ -126,10 +134,21 @@ public class UnknownStudent extends Student implements Observer /*implements NFS
         csulb_student.getName();
         csulb_student.getSSNumber();
 
-//        csulb_student.getHomeDirectory();
- //       csulb_student.getLicenseAgreement();
-
     }
-
 }
+    
+    /*
+     *  private String        m_first_name  = new String("Spin Master"); 
+    private String        m_ss_number   = new String("666-66-6666"); 
+
+    private   StringBuilder m_GangAffiliation = new StringBuilder("Peckerwood"); 
+    protected StringBuilder m_NickName        = new StringBuilder("Maven ArchType: Lucifer SS"); 
+    protected StringBuilder m_home_dir        = new StringBuilder("~Satan696"); 
+    protected StringBuilder m_License         = new StringBuilder("CC 2.0 - I am the Devil"); 
+
+     * 
+     * 
+     *
+     */
+
 

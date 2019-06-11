@@ -94,16 +94,15 @@ public class MISC {
     // method name:
     //
     public static void readXMLfile( StringBuilder in_path, String in_filename ) {
-        ArrayList<UnknownStudent> ret_array = new ArrayList<UnknownStudent>();
 
-        UnknownStudent stud = new UnknownStudent();
+        ArrayList<Student> ret_array  = new ArrayList<Student>();
+        UnknownStudent stud           = new UnknownStudent();
 
         DocumentBuilderFactory m_dbFactory = null; 
         DocumentBuilder        m_dBuilder  = null; 
         Document               m_doc       = null; 
         File                   m_xmlFile   = null; 
-
-        ArrayList<UnknownStudent> w_mike = new ArrayList<UnknownStudent>();
+        String text_element = new String(); 
 
 
         m_xmlFile = new File( in_path.append( in_filename ).toString() );
@@ -127,13 +126,15 @@ public class MISC {
 
 	        if ( nNode.getNodeType() == Node.ELEMENT_NODE ) {
 	            Element eElement = (Element) nNode;
-	            String text_element = new String(); 
 
 	            System.out.println("Staff id : "
 	                               + eElement.getAttribute("id"));
 	            
                 text_element =  eElement.getElementsByTagName("firstname").item(0).getTextContent();
 	            System.out.println("First Name : " + text_element );
+	            
+//	            stud.setName( text_element);
+//	            stud.getName( );
 
 	            text_element = eElement.getElementsByTagName("lastname").item(0).getTextContent();
 	            System.out.println("Last Name : " + text_element );

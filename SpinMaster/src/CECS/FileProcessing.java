@@ -128,18 +128,12 @@ public class FileProcessing {
 
 			FileProcessing filePro = null;
 
-//		    String         infile  = "C:\\Users\\IHATEALL\\Downloads\\Mychael" + 
-//		                                   "\\devAppSpace\\DBFlatFiles\\bibleVerses.txt";
 
-//		    String         infile  = "C:\\Users\\IHATEALL\\Downloads\\Mychael" + 
-//		                                   "\\devAppSpace\\DBFlatFiles\\List_of_Companies.txt"; 
+		    String infile = 
+		    		"/home/michael/Project/CSULB/marcham/devAppSpace/dotMike/List_of_Companies.mike"; 
 
-//		    String         outfile = "C:\\Users\\IHATEALL\\Downloads\\Mychael" + 
-//		                                   "\\devAppSpace\\DBFlatFiles\\characterOutput.txt";
-
-		    String infile = "/home/michael/Project/CSULB/marcham/devAppSpace/DBFlatFiles/companies/List_of_Companies.txt"; 
-
-		    String outfile = "/home/michael/Project/CSULB/marcham/devAppSpace/DBFlatFiles/companies/characterOutput.txt";
+		    String outfile = 
+		    		"/home/michael/Project/CSULB/marcham/devAppSpace/dotMike/characterOutput.txt";
 
 		    try {
 
@@ -165,7 +159,8 @@ public class FileProcessing {
 //			lines = filePro.parseLinesAlphabetic();
 
 			filePro.postLines("We believe it to be the work of \"the SpinManster\"");
-			filePro.postLines("who compromised the csulb GRID back in 1999" );
+			filePro.postLines("who compromised the CSULB GRID back in 1999" );
+
 //kkk			filePro.postLines("He's been running shit since then." );
 
 //		    filePro.PrintLines(lines);	
