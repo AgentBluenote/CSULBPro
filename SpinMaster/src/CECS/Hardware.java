@@ -17,12 +17,11 @@ import java.io.*;
 public final class Hardware {
 
     // 80X86x  or MIPS  Only two right now. 
-    private String chipSet = new String("Intel 80x86 Processor" );  
-
-//    private String chipSet = new String("QualComm SnapDragon");  
-//    private String chipSet = new String("MIPS Student Edition : 
+    private String m_chipSet = new String("Intel 80x86 Processor" );  
+//    private String m_chipSet = new String("QualComm SnapDragon");  
+//    private String m_chipSet = new String("MIPS Student Edition : 
 //                             Open-Air");  
-//    private String chipSet = new String("MIPS Professional    : 
+//    private String m_chipSet = new String("MIPS Professional    : 
 //                             Level 1 Propriatary");  
 
     //
@@ -36,7 +35,7 @@ public final class Hardware {
     // 1 of 4 ASIC chips 
     //
     public Hardware( String argv ){
-        chipSet = argv;
+        m_chipSet = argv;
     }
 
     // 
@@ -45,7 +44,7 @@ public final class Hardware {
     public String getChipSet(){
     	String ret_Val = new String();
 
-    	ret_Val = chipSet;
+    	ret_Val = m_chipSet;
   	return ret_Val;
     }
 
@@ -53,8 +52,20 @@ public final class Hardware {
     //
     // method name: 
     //
-    public void setChipset( String in_chipset ){
-	  chipSet = in_chipset; 
+    public void setChipset( int input ){
+
+
+        switch( input ){
+
+            case 1:
+                m_chipSet = new String("Intel 80x86 Processor" );  
+                break;
+
+            case 2:
+                m_chipSet = new String("MIPS Student Edition"); 
+                break;
+        }
+
     }
     
     //
@@ -72,7 +83,7 @@ public final class Hardware {
     // 
     //
     public String giveUpChipSet(){  // "because I sed"  MA
-    	return chipSet;  // just a string() for now.
+    	return m_chipSet;  // just a string() for now.
     }
 
 

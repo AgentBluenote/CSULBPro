@@ -28,59 +28,55 @@ import java.io.*;
 //  
 public class Student extends Observable implements NFSServices{
 
-    private String        m_first_name  = new String("Spin Master"); 
-    private String        m_ss_number   = new String("666-66-6666"); 
+    private String m_sex               = new String("Male");   // TBD
 
-    private   StringBuilder m_GangAffiliation = new StringBuilder("Peckerwood"); 
-    protected StringBuilder m_NickName        = new StringBuilder("Maven ArchType: Lucifer SS"); 
-    protected StringBuilder m_home_dir        = new StringBuilder("~Satan696"); 
-    protected StringBuilder m_License         = new StringBuilder("CC 2.0 - I am the Devil"); 
+    private String m_name              = new String("Michael J. SpinMaster");  // interface
+    private String m_ss_number         = new String("Michael J. SpinMaster");  // interface
 
-//    protected Object proxy = null; // MIKE later 
+    private String m_home_dir        = new String("~mgines");                        // interface RO 
+    private String m_license         = new String("Apache 2.0, \"the License\"");    // interface RO
+
+    private String m_gangaffiliation = new String("X.509er");                        // class   
+    private String m_nickname        = new String("BOD's Boys Of Destruction");      // class 
 
     // 
     // Constructror
     // 
     public Student() {
-        System.out.println( "Inside Student()\n" );
-//        System.out.println( "This is where I instantiate them..." );
-//        System.out.println( "Generally I use the tip of my Tongue to instntiate them..." );
-//        System.out.println( "R.C AKA The G.O.A.T" );
     }
 
     // 
     // method name: 
     //
-    public void setNickName( StringBuilder name) {
-        m_NickName.append( name  );
+    public String getNickName(){
+    	String nick_name = new String( m_nickname );
+
+    	return nick_name;
     }
 
     // 
     // method name: 
     //
-    public StringBuilder getNickName(){
-        return m_NickName; 
-    }
-    
-    // 
-    // method name: 
-    //
-    public void setGangAffiliation( String strTemp) {
-        m_GangAffiliation.append( strTemp  );
+    public void setNickName( String name) {
+        m_nickname = name; 
     }
 
     // 
     // method name: 
     //
-    public StringBuilder getGangAffiliation(){
-        return m_GangAffiliation; 
+    public String getGangAffiliation(){
+    	String gang = null; 
+    	gang = new String( m_gangaffiliation );
+    	return gang;
     }
 
     // 
     // method name: 
     //
-    public void setUnkown( Object arg) {
+    public void setGangAffiliation( String gang) {
+        m_gangaffiliation =  new String (gang );
     }
+
 
 
     //*********************************************************************** 
@@ -93,16 +89,16 @@ public class Student extends Observable implements NFSServices{
     // method name: 
     // 
     public String getName(){
+    	String gang = new String( m_name );
 
-        System.out.println( "Student.getName()" + m_first_name );
-        return m_first_name;
+        return m_name;
     }
 
     // 
     // method name: 
     // 
     public void setName( String name ){
-    	m_first_name = new String( name );
+    	m_name = new String( name );
     }
 
 
@@ -110,23 +106,26 @@ public class Student extends Observable implements NFSServices{
     // method name: 
     //
     public String getSSNumber(){
+    	String gang = new String( m_ss_number );
 
-        System.out.println( "Inisde Student::getSSNumber()   " + m_ss_number );
         return m_ss_number; 
     }
 
     //
     // method name: 
     //
-	public void setSSNumber(String ss_number) {
-    	m_ss_number = new String( ss_number );
-	}
-    
+    public void setSSNumber(String ss_number) {
+//        System.out.println( "Inside Student.setSSNumber() " 
+ //                           + ss_number );
+
+        m_ss_number = new String( ss_number );
+    }
+
     // 
     // method name: 
     // 
     public String getHomeDirectory(){
-        System.out.println( "this.getHomeDirectory() " + this.m_home_dir );
+        System.out.println( "Inside Student.getHomeDirectory() " + m_home_dir );
 
         return m_home_dir.toString();
     }
@@ -134,8 +133,9 @@ public class Student extends Observable implements NFSServices{
     //
     // method name: 
     //
-    public void getLicenseAgreement(){
-        System.out.println( "Inside Student::getHomeDirectory() " + this.m_home_dir );
+    public String getLicenseAgreement(){
+        System.out.println( "Inside Student.getLicenseAgreement():  " + m_license );
+        return m_license; 
     }
 
     //*********************************************************************** 
@@ -146,20 +146,47 @@ public class Student extends Observable implements NFSServices{
     public static void main(String[] args) {
 
         Student prof_student   = new Student();
-        Student           fkey = new KeptWomenStudent();
 
-        prof_student.setName( "Michael J. SpinMaster");
+
+        prof_student.setName( "Lissette");
         prof_student.getName();
 
-        prof_student.setSSNumber( "666-65-6666");  
+        // Pacific Woods apt. land line. 
+        prof_student.setSSNumber( "949-557-5807"); 
         prof_student.getSSNumber();
 
-        fkey.setName( "Mariana J. Ramirez");
-        fkey.getName();
+        prof_student.setNickName( "Sweet Pea");
+        prof_student.getNickName();
 
-        fkey.setSSNumber( "(714)334-3855 NC - Not a Citizen... KW");
-        fkey.getSSNumber();
+        prof_student.setGangAffiliation( "Soft Side Crypts!" );
+        prof_student.getGangAffiliation();
+
+
+        System.out.println( "Inside Student()\n" );
+
     }
 }
+
+//        System.out.println( "This is where I instantiate them..." );
+//        System.out.println( "Generally I use the tip of my Tongue to instntiate them..." );
+//        System.out.println( "R.C AKA The G.O.A.T" );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

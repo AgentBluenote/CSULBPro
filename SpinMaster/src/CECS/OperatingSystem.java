@@ -11,7 +11,7 @@ public final class OperatingSystem {
 
     private String m_OSDescription = new String("BSD Linux" ); 
 
-    private JVMRunTime m_JavaVirualMachine = new JVMRunTime(); 
+    private J2EEAppServer m_JavaVirualMachine = new J2EEAppServer(); 
 
 
     //
@@ -68,7 +68,7 @@ public final class OperatingSystem {
     // 
     // method name: 
     // 
-    public void setRuntime( JVMRunTime runtime ){  
+    public void setRuntime( J2EEAppServer runtime ){  
        m_JavaVirualMachine = runtime; 
     }
 
@@ -85,7 +85,7 @@ public final class OperatingSystem {
             System.out.println("command line param:argv[0] " + argv[0] );
 
         theSystem = new OperatingSystem();
-        theSystem.setRuntime( new JVMRunTime()); 
+        theSystem.setRuntime( new J2EEAppServer()); 
         theSystem.setOSDescription( "MAC OS");  // auto drive-by 
 
 //        MISC.issueSystemCall("ls ./src/CECS -lrt");

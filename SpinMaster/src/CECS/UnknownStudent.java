@@ -17,30 +17,27 @@ import java.lang.*;
 //    Conformed Copy - A conformed copy basically states. You will do as your 
 //                       told `or` die. 
 //
-public class UnknownStudent extends Student implements Observer /*implements NFSServices*/{ 
+public class UnknownStudent extends Student implements Observer { 
 
-    private String m_ss_number    = new String("1(203)666-7777");  // default: possibly "the spinMaster" 
-    private String m_student_name = new String("name"); 
-    private String m_home_dir     = new String("NFS"); 
-
+      private String m_license = new String(); 
+//    private String m_ss_number    = new String("");  // default: possibly "the spinMaster" 
+//    private String m_student_name = new String(""); 
+    private String m_home_dir     = new String(""); 
 
     //
     // Constructor
     //
     public UnknownStudent() {
-        System.out.println("DEBUG: UnknownStudent(::)" );
     }
 
     //
-    //
+    // Constructor II
     //
     public UnknownStudent( String one, String two, String three) {
 
-        System.out.println("DEBUG: Inside Student( String one, String two, String three )" );
-
-        m_ss_number          = new String(one);  
-        m_student_name = new String(two);  
-        m_home_dir      = new String(three); 
+//        m_ss_number    = new String(one);  
+//        m_student_name = new String(two);  
+        m_home_dir     = new String(three); 
     }
 
     //
@@ -59,43 +56,39 @@ public class UnknownStudent extends Student implements Observer /*implements NFS
     // 
     // method name: 
     // 
-    public String getName(){
+//    public String getName(){
 
-        System.out.println( "DEBUG:  " + m_student_name );
-
-        return m_student_name;
-    }
+//        return m_student_name;
+ ///   }
 
     // 
     // method name: 
     // 
-    public void setName( String name ){
-    	m_student_name = new String( name );
-    }
+//    public void setName( String name ){
 
-
-
-    //
-    // method name: 
-    //
-    public String getSSNumber(){
-
-        System.out.println( "DEBUG getSSNumber:  " + m_ss_number );
-        return m_ss_number; 
-    }
+ //   	m_student_name = new String( name );
+  //  }
 
     //
     // method name: 
     //
-	public void setSSNumber(String ss_number) {
-    	m_ss_number = new String( ss_number );
-	}
+//    public String getSSNumber(){
+ //       return m_ss_number; 
+  //  }
+
+    //
+    // method name: 
+    //
+//    public void setSSNumber(String ss_number) {
+ //       m_ss_number = new String( ss_number );
+//    }
     
     // 
     // method name: 
     // 
     public String getHomeDirectory(){
-        System.out.println( "this.getHomeDirectory() " + this.m_home_dir );
+      //System.out.println( "Inside UnknownStudent.getHomeDirectory()   : " 
+ //                           + this.m_home_dir );
 
         return m_home_dir.toString();
     }
@@ -103,10 +96,13 @@ public class UnknownStudent extends Student implements Observer /*implements NFS
     //
     // method name: 
     //
-    public void getLicenseAgreement(){
+    public String getLicenseAgreement(){
+//        System.out.println( "getLicenseAgreement(): \n " 
+ //                           +  "I use BSD, The Bullshit Deamon... SS - Server Side " );
 
-        System.out.println( "I use BSD, The Bullshit Deamon... SS - Server Side " );
-        System.out.println( "A-PAC 2.0" );
+         m_license = "I use BSD License, Berkely";
+
+         return m_license; 
     } 
     
 
@@ -114,11 +110,10 @@ public class UnknownStudent extends Student implements Observer /*implements NFS
     // interface: Observer 
     // method name: 
     // 
-	@Override
-	public void update(Observable o, Object arg) {
+    @Override
+    public void update(Observable o, Object arg) {
         System.out.println( "update ( Observabl, arg ");
-
-	}
+    }
 
 
     //************************************************************* 
@@ -128,27 +123,23 @@ public class UnknownStudent extends Student implements Observer /*implements NFS
     //************************************************************* 
     public static void main(String[] args) {
 
-        Student csulb_student         = new UnknownStudent();
+        Student csulb_student         = new Student();
 
+//        UnknownStudent default_student         = new UnknownStudent();
 
+        csulb_student.setName("sub");
         csulb_student.getName();
+
+        csulb_student.setSSNumber("subbbbbSS");
         csulb_student.getSSNumber();
 
+        csulb_student.getHomeDirectory();
+        csulb_student.getLicenseAgreement();
+
+        csulb_student.getGangAffiliation();
+//        csulb_student.readMessage();
     }
 }
     
-    /*
-     *  private String        m_first_name  = new String("Spin Master"); 
-    private String        m_ss_number   = new String("666-66-6666"); 
-
-    private   StringBuilder m_GangAffiliation = new StringBuilder("Peckerwood"); 
-    protected StringBuilder m_NickName        = new StringBuilder("Maven ArchType: Lucifer SS"); 
-    protected StringBuilder m_home_dir        = new StringBuilder("~Satan696"); 
-    protected StringBuilder m_License         = new StringBuilder("CC 2.0 - I am the Devil"); 
-
-     * 
-     * 
-     *
-     */
 
 

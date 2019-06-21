@@ -26,7 +26,7 @@ import java.util.*;
  */
 public final class CriminalFactory {
 
-    private static UnknownStudent m_criminal  =  new UnknownStudent();  
+//    private static Student m_criminal  =  new UnknownStudent();  
 
     // 
     // default Constructor
@@ -47,7 +47,10 @@ public final class CriminalFactory {
     //
     // As you NO, if it's a pattern, I can program it.  - annonymous
     // 
-    public static UnknownStudent getCriminal( String subtype ){
+    public static Student getCriminal( String subtype ){
+
+//        Student m_criminal  =  new UnknownStudent();  
+        Student m_criminal  =  null; 
 
     	switch ( subtype ){   // we know the name of the student
 
@@ -56,40 +59,32 @@ public final class CriminalFactory {
                m_criminal  =  new UnknownStudent(    "~tallison",
                                           " port 100  " ,
                                           " Apache 2.0  \"the License\"" );
-    	        break;
+    	       break;
 
-    	    case "Dr. Volper":
+    	    case "Volper":
 
-               System.out.println("Dennis Volper" );
+               System.out.println("Criminal Name:  Dennis Volper" );
                m_criminal  =  new UnknownStudent(    "~dvolper ",
                                           " port( 22 ) " ,
                                           " Safari License! " );
     	        break;
 
-    	    case "Dr. Eshagian":
-               System.out.println("Miss E." );
-               m_criminal  =  new UnknownStudent(    "~eshag ",
+    	    case "Mariana":
+               System.out.println("Criminal Name:  Miss M. Ariana" );
+               m_criminal  =  new KeptWomenStudent("~jmariana ",
                                           " port( 69 ) " ,
                                           " class C license" );
     	        break;
 
-
-    	    case "Tracy":
-               System.out.println("Criminal Name:  Tracy T. Maples" );
-                m_criminal  =  new UnknownStudent(  "~tmaples",
-                                          " port( 555 ) " ,
-                                          " BSD " );
-    	        break;
-
-    	    case "Princess":
-               System.out.println("Criminal Name:  Michael T." );
-                m_criminal  =  new UnknownStudent( "~pbravo",
-                                          " port( 23 ) " ,
+    	    case "Veronica":
+               System.out.println("Criminal Name:  Veronica Navarro");
+                m_criminal  =  new KeptWomenStudent( "~jnavarro",
+                                          " port( 69 ) " ,
                                           " GPL " );
     	        break;
 
     	    case "Marlon":
-               System.out.println("Criminal Name:  Michael T." );
+               System.out.println("Criminal Name: Marlon" );
                 m_criminal  =  new UnknownStudent(  "~mbravo",
                                           " port( 23 ) " ,
                                           " GPL " );
@@ -97,16 +92,18 @@ public final class CriminalFactory {
 
     	    case "Random":
                System.out.println("Criminal Name:  Random" );
-                m_criminal  =  new UnknownStudent(  "~r",
+                m_criminal  =  new UnknownStudent(  "~rand",
                                           " port( r ) " ,
                                           " BSD Bull Shit Deamon! " );
     	        break;
 
-
     	    default:
+                System.out.println("Criminal Name: default case: return unknown" );
+                m_criminal  =  new UnknownStudent(  "~default",
+                                          " port( 23 ) " ,
+                                          " GPL " );
+    	        break;
 //               System.out.println("I am  :  theSpinMaster" );
- //              System.out.println("I was :  theSpinMaster" );
-        //       System.out.println("I will:  theSpinMaster" );
 
     	} // end switch
 
@@ -117,36 +114,7 @@ public final class CriminalFactory {
     // main()
     //
     public static void main(String[] args) {
-    	
-        StringBuilder path = new  StringBuilder( 
-                                    "/home/michael/Project/" + 
-                                    "cvs/java8/Trials/src/CECS/" );	
 
-       String                 filename      = new String( "gangland.xml");	
-    	
-    	
-       BotNet  robot               = null; 
-       UnknownStudent registered_student  = null; 
-       Student unregistered_student      = null; 
-
-       ArrayList<String>  mylist = new ArrayList<String>();
-       
-       robot                 = new BotNet();
-       registered_student    = CriminalFactory.getCriminal("Michael");
-       unregistered_student  = CriminalFactory.getCriminal("Mario");
-
-       robot.writeMessage("Blow me a kiss...");
-
-       MISC.readXMLfile( path, filename );  // MIKE left off here.
-
-       mylist = MISC.issueSystemCall( "uname -a" );
-       
-       // MIKE foreach loop
-       for( String i : mylist ){
-    	   int j = 0;
-           System.out.println("I am :" + mylist.get(j)  );
-           j++;
-       }
 
     }
 }

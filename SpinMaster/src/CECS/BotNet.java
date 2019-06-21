@@ -56,7 +56,7 @@ public class BotNet{
 //    private StringBuffer unKnown = new StringBuffer("I am the Devil" ); 
 
     private Student m_superier = CriminalFactory.getCriminal("Random"); 
-    private UnknownStudent m_downLink       = CriminalFactory.getCriminal("Random"); 
+    private Student m_downLink       = CriminalFactory.getCriminal("Random"); 
 
     // 
     // Constructror

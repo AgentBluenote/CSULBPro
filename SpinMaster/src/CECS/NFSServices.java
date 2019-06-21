@@ -17,8 +17,7 @@ public interface NFSServices{
    public void setSSNumber( String ss_number );
 
    
-   
-   public String getHomeDirectory();
+//   public String getHomeDirectory();
 
-   public void getLicenseAgreement();
+   public String getLicenseAgreement();
 }

@@ -4,7 +4,7 @@ import java.lang.*;
 import java.util.*;
 
 // MIKE
-public class Library implements NFSServices{
+public class Library /* implements NFSServices */{
 
     private static int m_instanceNumber  = 0;   
 
@@ -85,6 +85,7 @@ public class Library implements NFSServices{
         return "Just In Time"; 
     }
 
+/*
 	@Override
 	public void setName( String name) {
 		// TODO Auto-generated method stub
@@ -97,5 +98,6 @@ public class Library implements NFSServices{
 		// TODO Auto-generated method stub
 		
 	}
+*/
 
 }

@@ -19,15 +19,17 @@ public final class Platform {
     // base16
     // 
     public enum HexStack {
-        ZERO, ONE, TWO, THREE, FOUR, FIVE, 
-        SIX, SEVEN, EIGHT, NINE, TEN, 
+        ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, 
+        SEVEN, EIGHT, NINE, TEN, 
         A, B, C, D, E, F, 
     }
-
+    // This is just the type of Platform:  There are 4 layers with 
+    // 16 possible combinations. 
     private  HexStack        m_ArchType          =  HexStack.ZERO; 
+
     private  Hardware        m_architecture      =  new Hardware();
-    private  OperatingSystem m_OSLayer           =  new OperatingSystem(); 
-    private  JVMRunTime      m_VirtualMachine    =  new JVMRunTime(); 
+//    private  OperatingSystem m_OSLayer           =  new OperatingSystem(); 
+    private  J2EEAppServer      m_ApplicationServer    =  new J2EEAppServer(); 
 
     // 
     // default Constructor
@@ -44,22 +46,22 @@ public final class Platform {
     	    case A:
     	    	m_ArchType       = HexStack.A; 
     	        m_architecture   = new Hardware( "MIPS"  );
-    	        m_OSLayer        = new OperatingSystem("Slackware Linux 2.0");
-    	        m_VirtualMachine = new JVMRunTime( new Library() );
+//    	        m_OSLayer        = new OperatingSystem("Slackware Linux 2.0");
+//    	        m_ApplicationServer = new J2EEAppServer( new Library() );
 
     	        break;
 
     	    case B:
     	    	m_ArchType       = HexStack.B;
     	        m_architecture   = new Hardware( "MIPS"  );
-    	        m_OSLayer        = new OperatingSystem("Windows embedded MV");
-    	        m_VirtualMachine = new JVMRunTime(  );
+//    	        m_OSLayer        = new OperatingSystem("Windows embedded MV");
+    	        m_ApplicationServer = new J2EEAppServer(  );
 
     	    case C:
     	    	m_ArchType       = HexStack.C;
     	        m_architecture   = new Hardware( "MIPS"  );
-    	        m_OSLayer        = new OperatingSystem("Fedora Core");
-    	        m_VirtualMachine = new JVMRunTime( new Library() );
+ //   	        m_OSLayer        = new OperatingSystem("Fedora Core");
+//    	        m_ApplicationServer = new J2EEAppServer( new Library() );
 
     	        break;
     	    default:
@@ -69,15 +71,15 @@ public final class Platform {
     //
     // method name:
     //
-    public OperatingSystem getOSLayerReference(){
-    	return this.m_OSLayer;
-    }
+ //   public OperatingSystem getOSLayerReference(){
+//    	return this.m_OSLayer;
+//    }
 
     //
     // method name:
     //
-    public JVMRunTime getJVMHotSpot(){
-    	return this.m_VirtualMachine;
+    public J2EEAppServer getJVMHotSpot(){
+    	return this.m_ApplicationServer;
     }
 
 
@@ -87,18 +89,18 @@ public final class Platform {
     private void printPlatformStack(){
     	String temp = new String( );
 //    	OS_Reference = new OperatingSystem( );
- //   	JVM_RunTime = new JVMRunTime( );
+ //   	J2EEAppServer = new J2EEAppServer( );
 //        System.out.println("DEBUG: Insid printPlatformStack()"); 
 //                           OS_Reference  = this.m_architecture.getChipSet() );
 
         System.out.println("DEBUG: Hardware        : " + 
                            this.m_architecture.getChipSet() );
 
-        System.out.println("DEBUG: OperatingSystem : " + 
-                           this.m_OSLayer.getOSDescription() );
+ //       System.out.println("DEBUG: OperatingSystem : " + 
+//                           this.m_OSLayer.getOSDescription() );
 
         System.out.println("DEBUG: VirtualMachine  : " + 
-                           this.m_VirtualMachine.getJVM()  );
+                           this.m_ApplicationServer.getJVM()  );
 
     }
 
@@ -109,23 +111,14 @@ public final class Platform {
 
         Platform platformStack = new Platform( HexStack.A );
 
-//        Unknown  application   = CriminalFactory.getCriminal("Michael" ); 
-
         // no input 
         if ( argv.length == 0){
             System.out.println("command line param:argv[0] " + "No input argument" );
 
         }
         // input filename 
-        else{
-            System.out.println("command line param:argv[0] " + argv[0] );
+        else{ System.out.println("command line param:argv[0] " + argv[0] );
         }
-
-
-//        application.getName();           
- //       application.getSSNumber();           
-  //      application.getHomeDirectory();           
-   //     application.getLicenseAgreement();           
 
         platformStack.printPlatformStack();
 
